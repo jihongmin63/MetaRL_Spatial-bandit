@@ -56,6 +56,7 @@ if 'Generating MAB' :
     plt.xticks([i for i in range(grid_size)])
     plt.yticks([i for i in range(grid_size)])
     plt.show()
+    plt.savefig('smooth')
 
     # Hard
     plt.figure(figsize=(6, 5))
@@ -69,8 +70,9 @@ if 'Generating MAB' :
     plt.xticks([i for i in range(grid_size)])
     plt.yticks([i for i in range(grid_size)])
     plt.show()
+    plt.savefig('hard')
 
-if 'Simulating agents' :
+if False :
     def get(ground, x, y) :
         return ground[x, y] + np.random.normal(0, 1)
 
