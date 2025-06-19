@@ -56,7 +56,8 @@ if 'Generating MAB' :
     plt.xticks([i for i in range(grid_size)])
     plt.yticks([i for i in range(grid_size)])
     plt.show()
-    plt.savefig('smooth')
+    plt.savefig('Example MAB_Smooth')
+    plt.close()
 
     # Hard
     plt.figure(figsize=(6, 5))
@@ -70,9 +71,10 @@ if 'Generating MAB' :
     plt.xticks([i for i in range(grid_size)])
     plt.yticks([i for i in range(grid_size)])
     plt.show()
-    plt.savefig('hard')
+    plt.savefig('Example MAB_Hard')
+    plt.close()
 
-if False :
+if 'Simulating Agents' :
     def get(ground, x, y) :
         return ground[x, y] + np.random.normal(0, 1)
 
@@ -145,7 +147,7 @@ if False :
     mg = res_smooth_MG[:, 1:].mean(axis = 0)
     vg = res_smooth_VG[:, 1:].mean(axis = 0)
     ucb = res_smooth_UCB[:, 1:].mean(axis = 0)
-
+    plt.figure()
     plt.plot(mg, label='MG')
     plt.plot(vg, label='VG')
     plt.plot(ucb, label='UCB')
@@ -157,3 +159,5 @@ if False :
         plt.text(i, ucb[i], f'{ucb[i]:.1f}', fontsize = 5)
 
     plt.show()
+    plt.savefig("Agents_result")
+    plt.close()
