@@ -91,7 +91,9 @@ if 'Simulating agents' :
             np.reciprocal(manhatten)
             results = np.multiply(results, manhatten)
 
-        results = np.exp(results / tau)
+        results = results / tau
+        results = results - np.max(results)
+        results = np.exp(results)
         results = results  / np.max(results)
         ans = np.argmax(results)
         if(debug) :
